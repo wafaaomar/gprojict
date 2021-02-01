@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.topnav {
+  overflow: hidden;
+  background-color: #d4c7b0;
+  margin-top:0px;
+}
+ 
+.topnav a {
+  float: right;
+  color: #3f4238;
+  text-align: center;
+  padding:18px 16px;
+  text-decoration: none;
+  font-size: 15px;
+}
+/*.topnav a:hover {
+  background-color: #a5a58d;
+  color: white;
+}*/
+ 
+.topnav a.home {
+  background-color: #a5a58d;
+  color: white;
+}
+ 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+ 
+/* Full-width input fields */
+input[type=text], input[type=password] {
+
+  box-sizing: border-box;  
+  width: 100% ;
+  padding: 12px 5px;
+  margin: 5px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+
+}
+ 
+   /*.ee{
+    position: absolute;
+  }*/
+  span.ey {
+    position: absolute;
+   left:490px;
+    transform: translate(0,-50%);
+    top: 64%;
+    cursor: pointer;
+  }
+  .fa{
+    font-size: 20px;
+    color: #7a797e;
+  }
+
+button{
+width:auto;
+background-color: #d4c7b0;
+border: none;
+float: right;
+color: #3f4238;
+text-align: center;
+padding:18px 16px;
+text-decoration: none;
+font-size: 15px;
+}
+ 
+button:hover.but2 {
+background-color: #a5a58d;
+color: white;
+
+}
+ 
+/* Set a style for all buttons */
+button.but1 {
+  background-color: #6b705c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+ 
+button:hover.but1 {
+  opacity: 0.8;
+}
+ 
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+ 
+.regbtn{
+  width: auto;
+  margin-right:5px;
+  padding: 10px 18px;
+  background-color: #f44336;
+ }
+
+ button:hover.regbtn{
+  opacity: 0.8;
+}
+button:hover.cancelbtn{
+  opacity: 0.8;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+ 
+img.avatar {
+  width: 30%;
+  border-radius: 30%;
+}
+ 
+.container {
+  padding: 10px;
+}
+ 
+span.psw {
+  float:right;
+  padding-top: 16px;
+}
+a.pass{
+float:right;
+padding-top: 0px;
+}
+ 
+ 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+ 
+/* Modal Content/Box */
+.modal-content {
+  background-color: #ddbea9;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 5px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+ 
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+ 
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+#hide1{
+  display: none;
+}
+ 
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+ 
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+ 
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+ }
+
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 50px;
+  overflow: hidden;
+  background-color:#ffffff;
+display: flex;
+justify-content: center;
+}
+/*
+li {
+float:right;
+display: flex;
+}*/
+
+li a, .dropbtn {
+  display: inline-block;
+  color: #3f4238;
+  text-align: center;
+  padding: 14px 50px;
+  text-decoration: none;
+}
+/*
+li a:hover, .dropdown:hover .dropbtn {
+
+}
+
+li.dropdown {
+  display: inline-block;
+}
+*/
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:  #d4c7b0;
+  min-width: 200px;
+  /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;*/
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #a5a58d;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*
+li a:hover, .dr:hover .dropbtn {
+
+}
+li.dr {
+  display: inline-block;
+}
+*/
+
+
+.slider {
+  width: 1350px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides {
+  width: 500%;
+  height: 300px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img {
+  width: 1350px;
+  height: 300px;
+}
+
+/* css for mannual slide navigation */
+
+.navigation-manual {
+  position: absolute;
+  width: 1350px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid #d4c7b0;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background: #d4c7b0;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+
+/* css for automatic navigation */
+.navigation-auto {
+  position: absolute;
+  display: flex;
+  width: 1350px;
+  justify-content: center;
+  margin-top: 259px;
+}
+
+.navigation-auto div {
+  border: 2px solid #d4c7b0;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background: #d4c7b0;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background: #d4c7b0;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background: #d4c7b0;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background: #d4c7b0;
+}
+
+
+
+
+  #content {
+   position: absolute;
+  margin-left: 200px;
+  top: 30px;
+  left: 50px;
+}
+
+  #content.on {
+  -webkit-animation-name: in-out;
+  animation-name: in-out;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+ .topnav .inputs{
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #a5a58d;
+  border-radius: 50%;
+  background: none;
+  color:#a5a58d;
+  font-size:9px;
+  font-weight: 400;
+  font-family: Roboto;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
+    padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
+    padding 0.2s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+  .search1 {
+  background: none;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  border-radius: 100%;
+  outline: 0;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+  .search1:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 3px;
+  background-color: #a5a58d;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 20px;
+  margin-left: 7px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+ .topnav .close2 {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.topnav .close2:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  margin-top: -1px;
+  margin-left: -13px;
+  background-color: #a5a58d;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+ .topnav .close2:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  background-color: #a5a58d;
+  margin-top: -1px;
+  margin-left: -13px;
+  cursor: pointer;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+ .topnav .square {
+  box-sizing: border-box;
+  padding: 0 20px 0 10px;
+  width: 200px;
+  height: 40px;
+  border: 3px solid #a5a58d;
+  border-radius: 0;
+  background: none;
+  color: #a5a58d;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+  padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+  padding 0.2s;
+  -webkit-transition-delay: 0.4s, 0s, 0.4s;
+  transition-delay: 0.4s, 0s, 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+ 
+
+</style>
+</head>
+ 
+<body>
+<title>Homepage</title>
+
+<div class="topnav">
+  <a class="home" href="C:\Users\HOME\Desktop\Homepage.html">Home</a>
+  <button class="but2" onclick="document.getElementById('id01').style.display='block'">تسجيل الدخول </button>
+ 
+ <form id="content">
+  <input type="text" name="input" class="inputs" id="search-input"> 
+  <button type="reset" class="search1" id="search-btn"></button>
+</form> 
+
+ <script >
+  // updated 2019
+const input = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-btn");
+
+const expand = () => {
+  searchBtn.classList.toggle("close2");
+  input.classList.toggle("square");
+};
+
+searchBtn.addEventListener("click", expand);
+
+
+
+
+//  old version / jquery
+//
+// function expand() {
+//   $(".search").toggleClass("close");
+//   $(".input").toggleClass("square");
+//   if ($('.search').hasClass('close')) {
+//     $('input').focus();
+//   } else {
+//     $('input').blur();
+//   }
+// }
+// $('button').on('click', expand);
+//
+
+ </script>
+
+
+<div id="id01" class="modal">
+ 
+<form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="https://img.icons8.com/pastel-glyph/2x/person-male.png" alt="Avatar" class="avatar">
+    </div>
+ 
+   
+    <div class="container" dir="rtl">
+     <label for="uname"><b>اسم المستخدم </b></label>
+      <input type="text" placeholder="ادخل اسم المستخدم" name="uname" required>
+    </div>
+ 
+    <div class="container" dir="rtl">
+      <label for="psw"><b>كلمة المرور</b></label>
+       <div class="col-sm-3 col-sm-offset-0" > 
+                                    <span class="ey" >
+                                    <p onclick="myFunction()"><i class="fa fa-eye fa-lg"></i></p>
+                                     <span class="ey">
+                                </div>
+
+                                <div class="col-sm-7 col-sm-offset-0">
+                             
+                             <input class="form-control" type="password" placeholder="ادخل كلمة المرور" id="myInput" name="password" autocomplete="off">
+
+                                </div>
+                               </div>
+   
+                            <script>
+                            function myFunction() {
+                              var x = document.getElementById("myInput");
+                              if (x.type === "password") {
+                                x.type = "text";
+                              } else {
+                                x.type = "password";
+                              }
+                            }
+                            </script>
+
+    <div class="container">
+      <button class="but1" type="submit">دخول</button>
+       <label>
+        <input type="checkbox" checked="checked" name="remember">تذكرني
+      </label>
+    </div>
+ 
+    <div class="container" style="background-color:#f1f1f1; width:auto; height: 40px;">
+      <button class="cancelbtn" type="button" onclick="document.getElementById('id01').style.display='none'">إلغاء</button>
+
+      <button class="regbtn" type="button">تسجيل</button>
+
+      <span class="psw">نسيت <a class="pass" href="#">كلمة المرور؟</a></span>
+    </div>
+</form>
+</div>
+
+    <script>
+// Get the modal
+  var modal = document.getElementById('id01');
+ 
+// When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+  }
+    </script>
+</div>
+
+ <ul>
+  <li><a href="#Become a partner">كن شريكا </a></li>
+  <li><a href="#Profile"> الملف الشخصي  </a></li>
+ 
+  <li class="dropdown">
+    <a href="#" class="dropbtn">------------- </a>
+  
+    <div class="dropdown-content">
+      <a class ="ch" href="#"> ---------</a>
+      <a href="#"> -----------</a>
+    </div>
+  </li>
+
+  <li><a href="#Our fields">التخصصات</a></li>
+  <li><a href="#Connect with us" class="dr">تواصل معنا  </a></li>
+  <li><a href="#About">حول</a></li>
+</ul>
+
+
+<!-- https://www.youtube.com/watch?v=0wvrlOyGlq0&t=95s -->
+
+<!-- image slider start -->
+<div class="slider">
+  <div class="slides">
+    <!--radio buttons start -->
+    <input type="radio" name="radio-btn" id="radio1">
+    <input type="radio" name="radio-btn" id="radio2">
+    <input type="radio" name="radio-btn" id="radio3">
+   
+    <!--radio buttons end -->
+    <!--slide images start -->
+    <div class="slide first">
+      <img src="https://cdn.mosoah.com/wp-content/uploads/2019/12/01113904/%D8%B5%D9%88%D8%B1-%D8%B4%D8%B9%D8%A7%D8%B1-%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%A7%D9%85-%D8%A7%D9%84%D9%82%D8%B1%D9%89-%D8%B4%D9%81%D8%A7%D9%81-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-825x510.jpg" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.mosoah.com/wp-content/uploads/2019/12/01113904/%D8%B5%D9%88%D8%B1-%D8%B4%D8%B9%D8%A7%D8%B1-%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%A7%D9%85-%D8%A7%D9%84%D9%82%D8%B1%D9%89-%D8%B4%D9%81%D8%A7%D9%81-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-825x510.jpg" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://cdn.mosoah.com/wp-content/uploads/2019/12/01113904/%D8%B5%D9%88%D8%B1-%D8%B4%D8%B9%D8%A7%D8%B1-%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%A7%D9%85-%D8%A7%D9%84%D9%82%D8%B1%D9%89-%D8%B4%D9%81%D8%A7%D9%81-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-825x510.jpg" alt="">
+    </div>
+
+    <!--slide images end -->
+    <!--automatic navigation start -->
+    <div class="navigation-auto">
+      <div class="auto-btn1"></div>
+      <div class="auto-btn2"></div>
+      <div class="auto-btn3"></div>
+
+    </div>
+    <!--automatic navigation end -->
+  </div>
+  <!--manual navigation start -->
+  <div class="navigation-manual">
+    <label for="radio1" class="manual-btn"></label>
+    <label for="radio2" class="manual-btn"></label>
+    <label for="radio3" class="manual-btn"></label>
+
+  </div>
+  <!--manual navigation end -->
+<script>
+  
+  let counter = 1;
+
+setInterval(function(){
+  document.getElementById("radio" + counter).checked = true;
+  counter++;
+  if(counter > 3) {
+    counter = 1;
+  }
+}, 5000)
+</script>
+
+</div>
+<!-- image slider end -->
+<body/>
+<html/>
